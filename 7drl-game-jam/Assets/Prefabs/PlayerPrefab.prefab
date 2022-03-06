@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7144fab0c6b704e8392e3680a907ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmoothFactor: 1
+  SmoothFactor: 3
   Player: {fileID: 8697527465415065866}
 --- !u!1 &8697527465415065866
 GameObject:

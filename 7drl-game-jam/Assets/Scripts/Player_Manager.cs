@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Manager : MonoBehaviour
 {
+    public GameObject GameOverScreen;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -11,6 +12,7 @@ public class Player_Manager : MonoBehaviour
 
     void Update()
     {
-        //if Player health <= 0 send player back to homescreen
+        //if Player health <= 0 make player inactive and turn on gameoverscreen
+        //if player is dead destroy this object after loading start screen
     }
 }

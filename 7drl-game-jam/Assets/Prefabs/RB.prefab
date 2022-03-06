@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4541491701355108}
   - component: {fileID: 212957151471992852}
   - component: {fileID: 9129485887748629931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 61705387448905968}
   - component: {fileID: 50614093338214456}
   - component: {fileID: 114559711743223928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Point (2)
   m_TagString: SpawnPoint
   m_Icon: {fileID: -6431860639581277017, guid: 0000000000000000d000000000000000, type: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 61243491120986832}
   - component: {fileID: 50464708541826054}
   - component: {fileID: 114876677147552156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Point (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: -6431860639581277017, guid: 0000000000000000d000000000000000, type: 0}
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4675656065730260}
   - component: {fileID: 114830474192372244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4273694571058726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 4175563550921282}
   - component: {fileID: 212770914364013868}
   - component: {fileID: 7602364581845192581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4397630461552206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 5609695376314424263}
   - component: {fileID: 1776080491731174762}
   - component: {fileID: 1139271787053487935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
