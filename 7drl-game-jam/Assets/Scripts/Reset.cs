@@ -7,9 +7,9 @@ public class Reset : MonoBehaviour
 {
     void Update()
     {
-        if(Input.anyKeyDown)
-        {
-            SceneManager.LoadScene("TestProcedural", LoadSceneMode.Single);
-        }
+        // if(Input.GetKeyDown("R"))
+        // {
+        //     SceneManager.LoadScene("TestProcedural", LoadSceneMode.Single);
+        // }
     }
 }
