@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         if (Moving) { transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * Movement_Speed); } //Movement
 
+        if(InRange) { Moving = false; }
         //Attack, stop moving when attacking
         Timer += Time.deltaTime;
         if(Timer >= Attack_Speed && InRange)
@@ -34,14 +35,27 @@ public class Enemy : MonoBehaviour
             Timer = 0;
             //Invoke attack method
         }
-        else
-        {
-            Moving = true;
-        }
+
+    }
+
+    private void Attacking()
+    {
+        //Attack Animation
+        //SetActive invisible object that has 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player") { InRange = false; }
+        if(collision.gameObject.tag == "Player") { InRange = true; }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Player") { InRange = false; }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player") { Player.GetComponent<Player_Movement>().Health -= Attack; }
     }
 }
