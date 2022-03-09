@@ -22,7 +22,10 @@ public class Enemy : MonoBehaviour
 
     virtual public void Update()
     {
-        if (Moving) { transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * Movement_Speed); } //Movement
+        if (Moving) { 
+            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * Movement_Speed); 
+            transform.LookAt(Player.gameObject.transform, Vector3.back);
+        } //Movement
 
         if(InRange) { Moving = false; }
         //Attack, stop moving when attacking
