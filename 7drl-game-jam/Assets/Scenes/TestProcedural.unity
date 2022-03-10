@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &524761016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +156,8 @@ MonoBehaviour:
   Enemies:
   - {fileID: 5004711150572417832, guid: 99ed6b07df103c94a80f92fa29b3c57e, type: 3}
   - {fileID: 5004711150572417832, guid: 28c54adb362abb443809480e87c70dc2, type: 3}
+  - {fileID: 3837152339964118680, guid: 32168b6c76d5ed44a8484e2a31663ee6, type: 3}
+  - {fileID: 624297463434947765, guid: 995748f4f1fb7b741ab3ebba233c87d6, type: 3}
   NumEnemies: 1
   Portal: {fileID: 1915609274014551625, guid: 9319d7a4dd90a86449bed95e637f52d4, type: 3}
 --- !u!4 &524761017
