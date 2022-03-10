@@ -9,11 +9,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float Attack_Speed = 2;
     [SerializeField] public float Movement_Speed = 3;
     [SerializeField] public float Multiplier = 1.0f;
-    [SerializeField] public GameObject Range; // Attack Range
-    private bool InRange = false;
-    private float Timer = 0;
-    private bool Moving = true;
-    private GameObject Player;
+    protected bool InRange = false;
+    protected float Timer = 0;
+    protected bool Moving = true;
+    protected GameObject Player;
 
     void Start()
     {
@@ -24,10 +23,14 @@ public class Enemy : MonoBehaviour
     {
         if (Moving) { 
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * Movement_Speed); 
-            transform.LookAt(Player.gameObject.transform, Vector3.back);
         } //Movement
+        Vector3 diff = Player.transform.position - transform.position;
+        diff.Normalize();
 
-        if(InRange) { Moving = false; }
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
+        if (InRange) { Moving = false; } else { Moving = true; }
         //Attack, stop moving when attacking
         Timer += Time.deltaTime;
         if(Timer >= Attack_Speed && InRange)
@@ -35,29 +38,35 @@ public class Enemy : MonoBehaviour
             Moving = false;
 
             //Do attack
-            Timer = 0;
-            //Invoke attack method
+            Attacking();
+        }
+
+        if(Health <= 0)
+        {
+            //if have death animation, run animation then do an invoke to destroy this game object
+            Destroy(this.gameObject);
         }
 
     }
 
-    private void Attacking()
+    private void Attacking() //probably change this to a coroutine
     {
         //Attack Animation
         //SetActive invisible object that has 
+        Timer = 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player") { InRange = true; }
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    protected void OnTriggerExit2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player") { InRange = false; }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player") { Player.GetComponent<Player_Movement>().Health -= Attack; }
     }
