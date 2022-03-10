@@ -8,6 +8,8 @@ public class UImanager : MonoBehaviour
 {
     const float maxTimer = 5.0f;
 
+    private GameObject pPlayer;
+
     //Player stats
     [SerializeField] private float pHealth;
     [SerializeField] private int pLevel;
@@ -26,6 +28,7 @@ public class UImanager : MonoBehaviour
     void Start()
     {
         //get everything from player script
+
     }
 
     // Update is called once per frame
@@ -70,5 +73,7 @@ public class UImanager : MonoBehaviour
         GameObject oExp = GameObject.Find("uiExp");
         oExp.GetComponent<Image>().fillAmount = pExp;
 
+        //Set skills
+        GameObject oSkill1;
     }
 }
