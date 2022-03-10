@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     public float Health = 100f;
+    public float MaxHealth = 100f;
     public float playerSpeed = 1f;
     public bool dash;
     public float dashSpeed;
