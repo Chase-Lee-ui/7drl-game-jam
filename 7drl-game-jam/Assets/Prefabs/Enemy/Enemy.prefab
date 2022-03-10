@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5004711150572417847}
   - component: {fileID: 5004711150572417846}
   - component: {fileID: 5004711150572417833}
-  - component: {fileID: 5004711150572417845}
-  - component: {fileID: 5004711150572417842}
+  - component: {fileID: 3547588435553851002}
+  - component: {fileID: 127790435879793660}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5004711150572417832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.36, y: 6.53, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1210675155, guid: e1399adb3f61fa84db7b3a3c19fc64a7, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   Movement_Speed: 3
   Multiplier: 1
   Range: {fileID: 0}
---- !u!61 &5004711150572417845
-BoxCollider2D:
+--- !u!60 &3547588435553851002
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,16 +122,59 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.66, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!58 &5004711150572417842
+  m_Points:
+    m_Paths:
+    - - {x: 0.69, y: -0.37}
+      - {x: 0.75, y: -0.01}
+      - {x: 0.83, y: 0.14}
+      - {x: 0.83, y: 0.22999999}
+      - {x: 0.53999996, y: 0.63}
+      - {x: 0.45999998, y: 0.74}
+      - {x: 0.39999998, y: 0.82}
+      - {x: 0.34, y: 0.88}
+      - {x: 0.29999998, y: 0.87}
+      - {x: 0.35, y: 0.7}
+      - {x: 0.38, y: 0.65999997}
+      - {x: 0.42999998, y: 0.53}
+      - {x: 0.59, y: 0.11}
+      - {x: 0.64, y: 0}
+      - {x: 0.34, y: -0.34}
+      - {x: 0.32999998, y: -0.35999998}
+      - {x: 0.19, y: -0.31}
+      - {x: 0.04, y: 0.11}
+      - {x: 0, y: 0.17999999}
+      - {x: -0.03, y: 0.17}
+      - {x: -0.13, y: -0.08}
+      - {x: -0.21, y: -0.35}
+      - {x: -0.35, y: -0.32999998}
+      - {x: -0.63, y: -0.01}
+      - {x: -0.53999996, y: 0.19}
+      - {x: -0.5, y: 0.32999998}
+      - {x: -0.39999998, y: 0.59}
+      - {x: -0.32, y: 0.79999995}
+      - {x: -0.32, y: 0.83}
+      - {x: -0.35, y: 0.84999996}
+      - {x: -0.41, y: 0.78}
+      - {x: -0.65, y: 0.45}
+      - {x: -0.83, y: 0.19}
+      - {x: -0.83, y: 0.11}
+      - {x: -0.78, y: 0.02}
+      - {x: -0.74, y: -0.11}
+      - {x: -0.7, y: -0.37}
+      - {x: -0.68, y: -0.41}
+      - {x: -0.48, y: -0.47}
+      - {x: -0.049999997, y: -0.9}
+      - {x: 0.01, y: -0.9}
+      - {x: 0.17999999, y: -0.74}
+      - {x: 0.45, y: -0.5}
+      - {x: 0.68, y: -0.39999998}
+--- !u!58 &127790435879793660
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,4 +189,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 1.1
