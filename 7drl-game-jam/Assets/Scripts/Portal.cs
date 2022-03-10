@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    public TextMesh Options;
-    private bool PlayerIsIn;
+    public GameObject Options;
+    public string NextScene;
+    protected bool PlayerIsIn;
 
-    void Update()
+    virtual public void Update()
     {
         if(PlayerIsIn)
         {
             if(Input.GetKeyDown("J"))
             {
-                //return to shop
+                SceneManager.LoadScene("Shop", LoadSceneMode.Single);
             }
 
             if(Input.GetKeyDown("L"))
             {
-                //go to next level
+                SceneManager.LoadScene(NextScene, LoadSceneMode.Single);
             }
         }
     }
