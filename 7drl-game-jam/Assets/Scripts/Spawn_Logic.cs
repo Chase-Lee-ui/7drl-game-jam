@@ -6,6 +6,7 @@ public class Spawn_Logic : MonoBehaviour
 {
     public RoomTemplates rmTemplates;
     public GameObject[] Enemies;
+    public int NumEnemies;
     public GameObject Portal;
     // Start is called before the first frame update
     void Start()
@@ -23,17 +24,25 @@ public class Spawn_Logic : MonoBehaviour
 
     void SpawnEnemies()
     {
-        Time.timeScale = 0;
         foreach(var rooms in rmTemplates.rooms)
         {
-            if(rooms.name != "Entry Room")
+            for(int i = 0; i < NumEnemies; i++)
             {
-                Instantiate(
-                    Enemies[Random.Range(0, Enemies.Length)], 
-                    rooms.gameObject.transform.position, 
-                    Quaternion.identity);
+                if(rooms.name != "Entry Room")
+                {
+                    var rmPos = new Vector3(
+                        rooms.gameObject.transform.position.x + Random.Range(-2.5f, 2.5f),
+                        rooms.gameObject.transform.position.y + Random.Range(-2.5f, 2.0f),
+                        rooms.gameObject.transform.position.z + Random.Range(-2.5f, 2.0f)
+                    );
+
+                    Instantiate(
+                        Enemies[Random.Range(0, Enemies.Length)], 
+                        rmPos, 
+                        Quaternion.identity);
+                }
             }
+            
         }
-        Time.timeScale = 1;
     }
 }

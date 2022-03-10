@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 1709453575458850, guid: 079d18e4c11ea3e478a7bf1d5d9094bd, type: 3}
   - {fileID: 1974744948600924, guid: 7b44a21d32a8e444bb3159107193187c, type: 3}
   leftRooms:
-  - {fileID: 1915828372064998, guid: 9f152a6992f719d45b79abc147df6bab, type: 3}
+  - {fileID: 1144202486990382, guid: fcafc5c1bb597f04899f9926a1868c4a, type: 3}
   - {fileID: 1982205314345556, guid: d831f37b3bfd2d046ba56080c8ae3bc5, type: 3}
   - {fileID: 1857462433007770, guid: 20b1649e664167b428cafa87386f13da, type: 3}
   - {fileID: 1144202486990382, guid: 82fc869e750926043a86230f793ce197, type: 3}
