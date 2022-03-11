@@ -816,7 +816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279965310}
   m_Layer: 5
-  m_Name: HP/EXP
+  m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
