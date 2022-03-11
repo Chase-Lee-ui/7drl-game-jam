@@ -47,7 +47,7 @@ public class UImanager : MonoBehaviour
     {
         //get player
         pPlayer = GameObject.Find("PlayerPrefab");
-        pMovement = pPlayer.GetComponent<Player_Movement>();
+        pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
 
         //get child objects
         oCombo = this.transform.Find("Combo/Triangle/Circle/uiCombo").gameObject;
