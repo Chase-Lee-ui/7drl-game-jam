@@ -4,21 +4,71 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public float Health;
-    [SerializeField] public float Attack;
-    [SerializeField] public float Attack_Speed;
-    [SerializeField] public float Movement_Speed;
-    [SerializeField] public float Multiplier;
-    [SerializeField] public float Range;
-    private GameObject Player;
+    [SerializeField] public float Health = 20;
+    [SerializeField] public float Attack = 10;
+    [SerializeField] public float Attack_Speed = 2;
+    [SerializeField] public float Movement_Speed = 3;
+    [SerializeField] public float Multiplier = 1.0f;
+    protected bool InRange = false;
+    protected float Timer = 0;
+    protected bool Moving = true;
+    protected GameObject Player;
 
     void Start()
     {
-        //Find Player Get Tag
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     virtual public void Update()
     {
-        // Follow Player
+        if (Moving) { 
+            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * Movement_Speed); 
+        } //Movement
+        Vector3 diff = Player.transform.position - transform.position;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
+        if (InRange) { Moving = false; } else { Moving = true; }
+        //Attack, stop moving when attacking
+        Timer += Time.deltaTime;
+        if(Timer >= Attack_Speed && InRange)
+        {
+            Moving = false;
+
+            //Do attack
+            Attacking();
+        }
+
+        if(Health <= 0)
+        {
+            //if have death animation, run animation then do an invoke to destroy this game object
+            //add exp/souls to player
+            Destroy(this.gameObject);
+        }
+
+    }
+
+    private void Attacking() //probably change this to a coroutine
+    {
+        //Attack Animation
+        //SetActive invisible object that has 
+        Timer = 0;
+    }
+
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player") { InRange = true; }
+    }
+
+    protected void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Player") { InRange = false; }
+    }
+
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player") { Player.GetComponent<Player_Movement>().Health -= Attack; }
     }
 }

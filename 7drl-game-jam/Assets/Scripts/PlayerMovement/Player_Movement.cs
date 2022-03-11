@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
+    public float Health = 100f;
+    public float MaxHealth = 100f;
     public float playerSpeed = 1f;
     public bool dash;
     public float dashSpeed;
@@ -25,6 +28,8 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
@@ -47,6 +52,13 @@ public class Player_Movement : MonoBehaviour
                 StartCoroutine(DashNow(xRaw, yRaw));
             }
         }
+
+        // Vector3 mousePos = Input.mousePosition;
+        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+         diff.Normalize();
+ 
+         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
 
     IEnumerator DashNow(float x, float y)
