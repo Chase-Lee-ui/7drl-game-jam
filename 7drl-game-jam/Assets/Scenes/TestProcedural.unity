@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1510339966302686895, guid: 5816c67dea915a2498dc133bfd73065e, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 1510485826937115065, guid: 5816c67dea915a2498dc133bfd73065e, type: 3}
       propertyPath: m_Layer
       value: 6
