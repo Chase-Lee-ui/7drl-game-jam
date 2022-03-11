@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reset
       objectReference: {fileID: 0}
+    - target: {fileID: 3490960600806399464, guid: 7f72290b598df81449f5629b5673b06a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3490960600806399466, guid: 7f72290b598df81449f5629b5673b06a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -362,26 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f96d823d3abbe648b54f8d5bb3f9e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1610406269 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1510339966302686895, guid: 5816c67dea915a2498dc133bfd73065e, type: 3}
-  m_PrefabInstance: {fileID: 1510339964938505346}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1610406274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610406269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c57afa11372d564aad59cf02d01cec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openingDirection: 0
-  spawned: 0
-  waitTime: 4
 --- !u!1001 &1510339964938505346
 PrefabInstance:
   m_ObjectHideFlags: 0
