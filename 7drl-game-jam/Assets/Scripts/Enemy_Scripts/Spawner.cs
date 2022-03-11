@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : Enemy
+public class Spawner : Enemy
 {
-    public GameObject[] Spells;
+    public GameObject[] EnemySpawns;
     public Transform SpellSpawner;
-
+    // Update is called once per frame
     public override void Update()
     {
         if (Moving)
@@ -37,10 +37,11 @@ public class Wizard : Enemy
             Destroy(this.gameObject);
         }
     }
+
     IEnumerator Attacking()
     {
-        var arrow = Instantiate(Spells[Random.Range(0, Spells.Length)], SpellSpawner.transform.position, this.gameObject.transform.rotation);
-        arrow.GetComponent<Arrow_Projectile>().Damage = this.Attack;
+        var spawned = Instantiate(EnemySpawns[Random.Range(0, EnemySpawns.Length)], SpellSpawner.transform.position, this.gameObject.transform.rotation);
+        spawned.GetComponent<Enemy>().Attack = this.Attack;
         yield return new WaitForSeconds(Attack_Speed);
         Timer = 0;
     }

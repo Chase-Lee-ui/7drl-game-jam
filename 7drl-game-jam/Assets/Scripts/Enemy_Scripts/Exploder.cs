@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : Enemy
+public class Exploder : Enemy
 {
-    public GameObject[] Spells;
-    public Transform SpellSpawner;
-
+    public float KaboomTimer;
+    public GameObject KaboomHitBox;
     public override void Update()
     {
         if (Moving)
@@ -19,17 +18,19 @@ public class Wizard : Enemy
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 
-        if (InRange) { Moving = false; } else { Moving = true; }
-        //Attack, stop moving when attacking
-        Timer += Time.deltaTime;
-        if (Timer >= Attack_Speed && InRange)
-        {
+        if (InRange)
+        { 
             Moving = false;
-
-            //Do attack
-            StartCoroutine(Attacking());
-            Timer = 0;
-        }
+            KaboomTimer -= Time.deltaTime;
+            if(KaboomTimer <= 0)
+            {
+                KaboomHitBox.SetActive(true);
+            }
+        } 
+        //else 
+        //{ 
+        //    Moving = true; 
+        //}
 
         if (Health <= 0)
         {
@@ -37,11 +38,5 @@ public class Wizard : Enemy
             Destroy(this.gameObject);
         }
     }
-    IEnumerator Attacking()
-    {
-        var arrow = Instantiate(Spells[Random.Range(0, Spells.Length)], SpellSpawner.transform.position, this.gameObject.transform.rotation);
-        arrow.GetComponent<Arrow_Projectile>().Damage = this.Attack;
-        yield return new WaitForSeconds(Attack_Speed);
-        Timer = 0;
-    }
+
 }
