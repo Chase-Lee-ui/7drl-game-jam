@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
         if(Health <= 0)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
+            //add exp/souls to player
             Destroy(this.gameObject);
         }
 

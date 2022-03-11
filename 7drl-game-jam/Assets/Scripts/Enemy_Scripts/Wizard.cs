@@ -40,7 +40,7 @@ public class Wizard : Enemy
     private void Attacking()
     {
         SpellIndex += 1;
-        if(SpellIndex > Spells.Length)
+        if(SpellIndex >= Spells.Length)
         {
             SpellIndex = 0;
         }
