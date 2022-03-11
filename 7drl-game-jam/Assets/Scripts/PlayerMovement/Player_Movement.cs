@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
