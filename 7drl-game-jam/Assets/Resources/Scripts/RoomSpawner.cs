@@ -15,7 +15,7 @@ public class RoomSpawner : MonoBehaviour {
 	private int rand;
 	public bool spawned = false;
 
-	public float waitTime = 4f;
+	public float waitTime = 1f;
 
 	void Start(){
 		Destroy(gameObject, waitTime);
