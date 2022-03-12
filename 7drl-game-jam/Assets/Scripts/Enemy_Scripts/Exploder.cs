@@ -24,13 +24,10 @@ public class Exploder : Enemy
             KaboomTimer -= Time.deltaTime;
             if(KaboomTimer <= 0)
             {
+                KaboomHitBox.GetComponent<Kaboomer>().Damage = this.Attack;
                 KaboomHitBox.SetActive(true);
             }
         } 
-        //else 
-        //{ 
-        //    Moving = true; 
-        //}
 
         if (Health <= 0)
         {
