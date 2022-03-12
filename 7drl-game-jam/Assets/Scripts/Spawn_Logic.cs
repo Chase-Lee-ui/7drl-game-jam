@@ -11,10 +11,10 @@ public class Spawn_Logic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnEnemies", 1.0f);
+        Invoke("SpawnEnemies", 2.0f);
     }
 
-    void Update()
+        void Update()
     {
         if(GameObject.FindGameObjectsWithTag("Enemy") == null)
         {
@@ -24,25 +24,19 @@ public class Spawn_Logic : MonoBehaviour
 
     void SpawnEnemies()
     {
-        foreach(var rooms in rmTemplates.rooms)
+        for(int i = 0; i < NumEnemies; i++)
         {
-            for(int i = 0; i < NumEnemies; i++)
-            {
-                if(rooms.name != "Entry Room")
-                {
-                    var rmPos = new Vector3(
-                        rooms.gameObject.transform.position.x + Random.Range(-2.5f, 2.5f),
-                        rooms.gameObject.transform.position.y + Random.Range(-2.5f, 2.0f),
-                        rooms.gameObject.transform.position.z + Random.Range(-2.5f, 2.0f)
+            var rmPos = new Vector3(
+                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.x,
+                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.y,
+                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.z
                     );
 
-                    Instantiate(
-                        Enemies[Random.Range(0, Enemies.Length)], 
-                        rmPos, 
-                        Quaternion.identity);
-                }
-            }
-            
+            Instantiate(
+                Enemies[Random.Range(0, Enemies.Length)],
+                rmPos,
+                Quaternion.identity
+            );
         }
     }
 }
