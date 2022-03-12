@@ -17,10 +17,12 @@ public class RoomTemplates : MonoBehaviour {
 	private bool spawnedBoss;
 	public GameObject boss;
 	public int LimitRooms;
+	private float Modifier;
 
 	void Start()
 	{
-		
+		this.Modifier = GameObject.Find("PlayerPrefab").GetComponent<Player_Manager>().Modifier;
+        LimitRooms = Mathf.CeilToInt(LimitRooms * Modifier);
 	}
 
 	void Update(){

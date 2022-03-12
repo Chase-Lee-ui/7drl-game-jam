@@ -22,15 +22,19 @@ public class Combo_Manager : MonoBehaviour
     void Update()
     {
         timeLeft = timeLeft - Time.deltaTime;
-        if (enemy.Health == 0) 
+        if(enemy != null)
         {
-            comboCount++;
-            timeLeft = comboTime;
-        }
+            if (enemy.Health == 0) 
+            {
+                comboCount++;
+                timeLeft = comboTime;
+            }
  
-        if (timeLeft == 0) 
-        {
-            comboCount = 0;
+            if (timeLeft == 0) 
+            {
+                comboCount = 0;
+            }
         }
+        
     }
 }
