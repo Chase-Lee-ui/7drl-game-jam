@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player_Weapon : MonoBehaviour
 {
     public Player_Movement Player;
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Enemy>().Health -= Player.PlayerDamage;
+            other.gameObject.GetComponent<Enemy>().Health -= Player.PlayerDamage;
         }
     }
 }

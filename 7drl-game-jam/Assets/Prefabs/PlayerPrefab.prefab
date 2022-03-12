@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8305502492469288548}
   - component: {fileID: 2811328908695220281}
+  - component: {fileID: 2897484514811655985}
+  - component: {fileID: 5461987819806667649}
   m_Layer: 0
   m_Name: SwordLength
   m_TagString: Weapon
@@ -42,7 +44,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.2533536, y: 0.28790188}
@@ -58,6 +60,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.105544, y: 1.5758038}
   m_EdgeRadius: 0
+--- !u!50 &2897484514811655985
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166692439529538939}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5461987819806667649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166692439529538939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728af4ea0565139418a3589ce902644e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 3931089466719944353}
 --- !u!1 &8697527464573918118
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8697527464573918113}
+  - component: {fileID: 6927974171515146943}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -91,6 +128,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6927974171515146943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697527464573918118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a9ce99298f03c4aaa7d829b0d2e82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverScreen: {fileID: 0}
+  Modifier: 1
+  LoopCounter: 0
+  Player: {fileID: 3931089466719944353}
 --- !u!1 &8697527464863193622
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +384,7 @@ BoxCollider2D:
   m_Offset: {x: 0.025244713, y: 0.117004395}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 1.3299999}
-    pivot: {x: 0.5196439, y: 0.17587481}
+    pivot: {x: 0.5196439, y: 0.1758748}
     oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
