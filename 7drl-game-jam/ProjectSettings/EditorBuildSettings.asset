@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/pHUD.unity
-    guid: d96cb9b544e955d4db3023b1796fead3
+    path: Assets/Scenes/Start_Screen.unity
+    guid: 2fecb0b923bcb9340b2b7a86b91de685
   - enabled: 1
     path: Assets/Scenes/TestProcedural.unity
     guid: 4335b5cbbc60d754ab778f6d77ef9605
+  - enabled: 1
+    path: Assets/Scenes/pHUD.unity
+    guid: d96cb9b544e955d4db3023b1796fead3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: b10fe0862ea1a9c4ca7175adce79f2e4
   m_configObjects: {}

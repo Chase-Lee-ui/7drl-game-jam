@@ -11,7 +11,7 @@ public class UImanager : MonoBehaviour
     const float skillOnAlpha = 0f;
 
     //Player
-    private bool hasPlayer;
+    [SerializeField]  private bool hasPlayer;
     private GameObject pPlayer;
     private Player_Movement pMovement;
     //private Combo_Manager pCombo;
@@ -124,6 +124,7 @@ public class UImanager : MonoBehaviour
 
         if (pPlayer)
         {
+            hasPlayer = true;
             pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
             //pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
         }
