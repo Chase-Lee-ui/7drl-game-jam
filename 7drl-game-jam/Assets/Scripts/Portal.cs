@@ -8,9 +8,10 @@ public class Portal : MonoBehaviour
     public GameObject[] Options;
     //0 - Option J
     //1 = Option L
-    public string NextScene;
+    public string[] NextScene;
     protected bool PlayerIsIn;
     public int LoopNum;
+    public int CurrentWave;
 
     void Start()
     {
@@ -21,14 +22,14 @@ public class Portal : MonoBehaviour
     {
         if(PlayerIsIn)
         {
-            if(Input.GetKeyDown("J") && LoopNum < 5)
+            if(Input.GetKey(KeyCode.J) && LoopNum < 5)
             {
                 SceneManager.LoadScene("Shop", LoadSceneMode.Single);
             }
 
-            if(Input.GetKeyDown("L"))
+            if(Input.GetKey(KeyCode.L))
             {
-                SceneManager.LoadScene(NextScene, LoadSceneMode.Single);
+                SceneManager.LoadScene(NextScene[CurrentWave], LoadSceneMode.Single);
             }
         }
     }
@@ -42,7 +43,7 @@ public class Portal : MonoBehaviour
             {
                 this.Options[0].gameObject.SetActive(true);
             }
-            this.Options[0].gameObject.SetActive(true);
+            this.Options[1].gameObject.SetActive(true);
         }
     }
 
@@ -52,7 +53,7 @@ public class Portal : MonoBehaviour
         {
             this.PlayerIsIn = false;
             this.Options[0].gameObject.SetActive(false);
-            this.Options[1].gameObject.SetActive(true);
+            this.Options[1].gameObject.SetActive(false);
         }
     }
 }

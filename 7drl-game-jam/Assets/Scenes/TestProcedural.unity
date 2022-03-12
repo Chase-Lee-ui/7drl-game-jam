@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: NumEnemies
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8312197024648271853, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9153715358948798597, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
       propertyPath: m_RootOrder
       value: 1

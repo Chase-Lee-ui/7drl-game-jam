@@ -17,4 +17,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: b10fe0862ea1a9c4ca7175adce79f2e4
+  - enabled: 1
+    path: Assets/Scenes/Waves/Final_Boss.unity
+    guid: 054a26f705cf48e47a9ae0420edbdd2b
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_1.unity
+    guid: 9c147edbaf5401a40a51e701c04d4686
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_1_Variant.unity
+    guid: 0729ca9025ac609428a2118f0ca8c36d
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_2.unity
+    guid: 341c3092fa4d7854cac7be4677b0a1bf
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_3.unity
+    guid: 35b5a3ea862fcca488648e05c8b7ea54
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_4.unity
+    guid: 2acf3e371e78f104e91072b4576f5658
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_5.unity
+    guid: 4fd269790b0809249adb590c90b53b9f
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_6.unity
+    guid: 2d02b668509545646bbd6a9f31ad10a8
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_7.unity
+    guid: 1cf294c228367524c867e9dc3724f1ad
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_8.unity
+    guid: d077ccfcaeadc1747b5d16dc67deaa8e
+  - enabled: 1
+    path: Assets/Scenes/Waves/Wave_9.unity
+    guid: 76447a07588b8224689871102397ecfa
   m_configObjects: {}

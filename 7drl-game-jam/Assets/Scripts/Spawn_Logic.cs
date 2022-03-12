@@ -8,7 +8,10 @@ public class Spawn_Logic : MonoBehaviour
     public GameObject[] Enemies;
     public int NumEnemies;
     public GameObject Portal;
+    private bool Portal_Spawned = false;
     private float Modifier;
+    public List<GameObject> EnemiesLeft;
+    public float Time_Elapsed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +28,19 @@ public class Spawn_Logic : MonoBehaviour
 
     void Update()
     {
-        if(GameObject.FindGameObjectsWithTag("Enemy") == null)
+        for(int i = 0; i < EnemiesLeft.Count; i++)
         {
-            Instantiate(Portal, rmTemplates.rooms[0].transform.position, Quaternion.identity);
+            if(EnemiesLeft[i] == null)
+            {
+                EnemiesLeft.RemoveAt(i);
+            }
+        }
+
+        Time_Elapsed += Time.deltaTime;
+        if(EnemiesLeft.Count == 0 && Time_Elapsed >= 2.1f && Portal_Spawned == false)
+        {
+            Instantiate(Portal, rmTemplates.rooms[0].gameObject.transform.position, Quaternion.identity);
+            Portal_Spawned = true;
         }
     }
 
@@ -41,11 +54,13 @@ public class Spawn_Logic : MonoBehaviour
                         rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.z + Random.Range(-1.5f, 1.5f)
                     );
 
-            Instantiate(
+            var spawnedEnemy = Instantiate(
                 Enemies[Random.Range(0, Enemies.Length)],
                 rmPos,
                 Quaternion.identity
             );
+
+            EnemiesLeft.Add(spawnedEnemy);
         }
     }
 }
