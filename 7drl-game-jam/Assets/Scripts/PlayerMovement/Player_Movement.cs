@@ -77,9 +77,7 @@ public class Player_Movement : MonoBehaviour
     {
         SwordAnim.SetBool("Attack", true);
         Sword.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(1.0f);
-        
+        yield return new WaitForSeconds(0.417f);
         Sword.gameObject.SetActive(false);
         SwordAnim.SetBool("Attack", false);
         Time_Elapsed = 0;
