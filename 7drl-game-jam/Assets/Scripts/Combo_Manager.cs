@@ -27,7 +27,7 @@ public class Combo_Manager : MonoBehaviour
             comboCount++;
             timeLeft = comboTime;
         }
-
+ 
         if (timeLeft == 0) 
         {
             comboCount = 0;
