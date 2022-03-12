@@ -141,6 +141,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3008638738112700507, guid: 1a1e61fd658294d4cb7a35c47f1bcc4c, type: 3}
+      propertyPath: LimitRooms
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008638738112700507, guid: 1a1e61fd658294d4cb7a35c47f1bcc4c, type: 3}
+      propertyPath: rightRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1580888179356958, guid: d38b2788e975bb940b689602261e23a7, type: 3}
+    - target: {fileID: 3008638738112700507, guid: 1a1e61fd658294d4cb7a35c47f1bcc4c, type: 3}
+      propertyPath: rightRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1982205314345556, guid: d831f37b3bfd2d046ba56080c8ae3bc5, type: 3}
     - target: {fileID: 3008638738112700509, guid: 1a1e61fd658294d4cb7a35c47f1bcc4c, type: 3}
       propertyPath: m_Name
       value: Room Templates
