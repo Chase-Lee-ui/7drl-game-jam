@@ -10,9 +10,19 @@ public class Player_Manager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         //if Player health <= 0 make player inactive and turn on gameoverscreen
+        if ()
+        {
+
+        }
+
         //if player is dead destroy this object after loading start screen
     }
 }
