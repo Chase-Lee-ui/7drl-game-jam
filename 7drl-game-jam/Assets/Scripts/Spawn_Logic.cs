@@ -11,7 +11,7 @@ public class Spawn_Logic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnEnemies", 2.0f);
+        Invoke("SpawnEnemies", 1.0f);
     }
 
     void Update()
