@@ -21,16 +21,18 @@ public class Combo_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeLeft = timeLeft - Time.deltaTime;
-        if (enemy.Health == 0) 
+        if (timeLeft <= 0 && timeLeft >= 0)
+        {
+            timeLeft = timeLeft - Time.deltaTime;
+        }
+        else 
+        {
+            comboCount = 0;
+        }
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <=0)
         {
             comboCount++;
             timeLeft = comboTime;
-        }
- 
-        if (timeLeft == 0) 
-        {
-            comboCount = 0;
         }
     }
 }
