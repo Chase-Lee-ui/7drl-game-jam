@@ -17,10 +17,13 @@ public class Player_Manager : MonoBehaviour
 
     void Update()
     {
-        if(Player.Health <= 0)
+        if(Player.gameObject.activeInHierarchy && Player.Health <= 0)
         {
             Player.gameObject.SetActive(false);
-            //turn on game over screen/scene
+
+            SceneManager.UnloadSceneAsync("pHUD");
+
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
         }
 
         if(SceneManager.GetActiveScene().name == "Start_Screen") { Destroy(this.gameObject); }
