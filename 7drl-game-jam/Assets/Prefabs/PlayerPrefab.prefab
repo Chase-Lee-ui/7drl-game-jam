@@ -103,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8697527464573918113}
+  - component: {fileID: 6927974171515146943}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -127,6 +128,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6927974171515146943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697527464573918118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a9ce99298f03c4aaa7d829b0d2e82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverScreen: {fileID: 0}
+  Modifier: 1
+  LoopCounter: 0
+  Player: {fileID: 3931089466719944353}
 --- !u!1 &8697527464863193622
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +384,7 @@ BoxCollider2D:
   m_Offset: {x: 0.025244713, y: 0.117004395}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 1.3299999}
-    pivot: {x: 0.5196439, y: 0.17587481}
+    pivot: {x: 0.5196439, y: 0.1758748}
     oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5

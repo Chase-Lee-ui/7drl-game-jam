@@ -14,7 +14,7 @@ public class Spawn_Logic : MonoBehaviour
         Invoke("SpawnEnemies", 2.0f);
     }
 
-        void Update()
+    void Update()
     {
         if(GameObject.FindGameObjectsWithTag("Enemy") == null)
         {

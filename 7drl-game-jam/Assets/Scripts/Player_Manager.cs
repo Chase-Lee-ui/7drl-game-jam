@@ -18,12 +18,11 @@ public class Player_Manager : MonoBehaviour
     {
         if(Player.Health <= 0)
         {
-            Player.gameObject.SetActive(true);
+            Player.gameObject.SetActive(false);
             //turn on game over screen/scene
         }
-        if(SceneManager.GetActiveScene().name == "Start_Screen")
-        {
-            Destroy(this.gameObject);
-        }
+        
+        if(SceneManager.GetActiveScene().name == "Start_Screen") { Destroy(this.gameObject); }
+        if(SceneManager.GetActiveScene().name == "Shop") { LoopCounter++; Modifier *= 1.1f; }
     }
 }
