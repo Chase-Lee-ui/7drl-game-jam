@@ -45,12 +45,13 @@ public class Spawn_Logic : MonoBehaviour
 
     void SpawnEnemies()
     {
+        var pickedRoom = rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)];
         for(int i = 0; i < NumEnemies; i++)
         {
             var rmPos = new Vector3(
-                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.x,
-                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.y,
-                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.z
+                        pickedRoom.gameObject.transform.position.x + Random.Range(-1f, 1f),
+                        pickedRoom.gameObject.transform.position.y + Random.Range(-1f, 1f),
+                        pickedRoom.gameObject.transform.position.z
                     );
 
             var spawnedEnemy = Instantiate(
