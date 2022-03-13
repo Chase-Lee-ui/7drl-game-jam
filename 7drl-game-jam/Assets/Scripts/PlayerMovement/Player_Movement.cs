@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     public float PlayerDamage = 5.0f;
     public float playerSpeed = 1f;
     public float AttackSpeed = 0.5f;
-    public bool dash;
+    public bool dash, swingreadyaudio;;
     public float dashSpeed;
     public float inputDashSpeed;
     public float MaxDashes;                 // TO DO: IMPLIMENT THIS
@@ -18,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     public float dashCooldown = 1f;
     public bool dashImmunity;
     public float Time_Elapsed = 2.0f;
+    public AudioSource dashSwoosh, swingSwoosh;
     
     public int souls;
     public int exp;
@@ -53,6 +54,7 @@ public class Player_Movement : MonoBehaviour
             if(!dash) 
             {
                 StartCoroutine(DashNow(xRaw, yRaw));
+                dashSwoosh.Play();
             }
         }
 
@@ -66,23 +68,30 @@ public class Player_Movement : MonoBehaviour
         Time_Elapsed += Time.deltaTime;
         if(Input.GetKey(KeyCode.Mouse0) && Time_Elapsed >= AttackSpeed)
         {
-            StartCoroutine(AttackNow());
+            if (!swingreadyaudio)
+            {
+                StartCoroutine(AttackNow());
+                swingSwoosh.Play();
+            }
+          //  swingreadyaudio = true;
+   //         swingSwoosh.Play();
         }
         
     }
 
     IEnumerator AttackNow()
     {
+        // swingSwoosh.Play();
         SwordAnim.SetBool("Attack", true);
         Sword.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(1.0f);
-        
+        swingreadyaudio = true;
+        yield return new WaitForSeconds(0.417f);
+        // swingreadyaudio = true;
         Sword.gameObject.SetActive(false);
         SwordAnim.SetBool("Attack", false);
         Time_Elapsed = 0;
+        swingreadyaudio = false;
     }
-    
     IEnumerator DashNow(float x, float y)
     {
         dash = true;
@@ -112,4 +121,3 @@ public class Player_Movement : MonoBehaviour
         dash = false;
     }
 }
-
