@@ -134,6 +134,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Procedural_Logic
       objectReference: {fileID: 0}
+    - target: {fileID: 8312197023509877255, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
+      propertyPath: LimitRooms
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312197024648271842, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
+      propertyPath: NumEnemies
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312197024648271842, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
+      propertyPath: Enemies.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312197024648271842, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
+      propertyPath: Enemies.Array.data[5]
+      value: 
+      objectReference: {fileID: 624297463434947765, guid: 995748f4f1fb7b741ab3ebba233c87d6, type: 3}
+    - target: {fileID: 8312197024648271842, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
+      propertyPath: Enemies.Array.data[6]
+      value: 
+      objectReference: {fileID: 624297463434947765, guid: 995748f4f1fb7b741ab3ebba233c87d6, type: 3}
     - target: {fileID: 9153715358948798597, guid: f76d80e1cfc0ff644ad05a391a4cc270, type: 3}
       propertyPath: m_RootOrder
       value: 0
