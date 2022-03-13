@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: swingSwoosh
       value: 
       objectReference: {fileID: 1830670946}
+    - target: {fileID: 5402075392193996877, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8697527464573918113, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -192,6 +196,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+--- !u!114 &136082652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2371022451482173375, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+  m_PrefabInstance: {fileID: 136082651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1496d2517045464aa6ce8d47b9559e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &137098602
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +361,7 @@ MonoBehaviour:
   Portal: {fileID: 1915609274014551625, guid: 9319d7a4dd90a86449bed95e637f52d4, type: 3}
   EnemiesLeft: []
   Time_Elapsed: 0
+  combo: {fileID: 136082652}
 --- !u!4 &524761017
 Transform:
   m_ObjectHideFlags: 0
