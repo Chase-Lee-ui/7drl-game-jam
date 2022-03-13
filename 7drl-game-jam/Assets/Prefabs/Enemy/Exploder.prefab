@@ -212,6 +212,7 @@ MonoBehaviour:
   Attack_Speed: 2
   Movement_Speed: 3
   Multiplier: 1
+  dead: {fileID: 7447776509239660778, guid: 1b5ccfde08305764e8c77b1c517ee4d5, type: 3}
   KaboomTimer: 2
   KaboomHitBox: {fileID: 548557067343700611}
 --- !u!50 &1176013882105466794

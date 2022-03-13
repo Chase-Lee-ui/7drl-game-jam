@@ -200,6 +200,7 @@ MonoBehaviour:
   Attack_Speed: 10
   Movement_Speed: 3
   Multiplier: 1
+  dead: {fileID: 7447776509239660778, guid: 1b5ccfde08305764e8c77b1c517ee4d5, type: 3}
   EnemySpawns:
   - {fileID: 5004711150572417832, guid: 99ed6b07df103c94a80f92fa29b3c57e, type: 3}
   - {fileID: 3837152339964118680, guid: 32168b6c76d5ed44a8484e2a31663ee6, type: 3}

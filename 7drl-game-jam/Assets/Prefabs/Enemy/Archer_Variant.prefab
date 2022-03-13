@@ -122,6 +122,7 @@ MonoBehaviour:
   Attack_Speed: 2
   Movement_Speed: 3
   Multiplier: 1
+  dead: {fileID: 7447776509239660778, guid: 1b5ccfde08305764e8c77b1c517ee4d5, type: 3}
   Arrow: {fileID: 5011227646911511419, guid: 8477b461ab7fecc4f8f0da1cea106361, type: 3}
   ArrowSpawner: {fileID: 224682507047424537}
 --- !u!50 &5688517187886483457

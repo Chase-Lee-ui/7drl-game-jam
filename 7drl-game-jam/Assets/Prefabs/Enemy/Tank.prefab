@@ -105,6 +105,7 @@ MonoBehaviour:
   Attack_Speed: 10
   Movement_Speed: 1
   Multiplier: 1
+  dead: {fileID: 7447776509239660778, guid: 1b5ccfde08305764e8c77b1c517ee4d5, type: 3}
 --- !u!50 &-2054780572494485634
 Rigidbody2D:
   serializedVersion: 4

@@ -106,6 +106,7 @@ MonoBehaviour:
   Attack_Speed: 2
   Movement_Speed: 3
   Multiplier: 1
+  dead: {fileID: 7447776509239660778, guid: 1b5ccfde08305764e8c77b1c517ee4d5, type: 3}
   Spells:
   - {fileID: 4455903310719478757, guid: 60e737b097c4bcf42866b0f9685052e8, type: 3}
   - {fileID: 1063761911284145663, guid: 3a6918ece7a7b114ba2eaf6e45e84b29, type: 3}

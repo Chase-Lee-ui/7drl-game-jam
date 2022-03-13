@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     protected bool Moving = true;
     protected GameObject Player;
     protected Combo_Manager combo;
+    public AudioSource dead;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
         {
             //if have death animation, run animation then do an invoke to destroy this game object
             //add exp/souls to player
+            dead.Play();
             Destroy(this.gameObject);
         }
 
