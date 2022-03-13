@@ -22,6 +22,7 @@ public class UImanager : MonoBehaviour
     [SerializeField] private float pExp;
     [SerializeField] private int pCombo;
     [SerializeField] private int pSouls;
+    private int pHealthNum;
     private float pTimer;
 
     //Abilities
@@ -36,6 +37,7 @@ public class UImanager : MonoBehaviour
 
     private GameObject oLevel;
     private GameObject oHealth;
+    private GameObject oHealthNum;
     private GameObject oExp;
 
     private GameObject oSkill1;
@@ -73,7 +75,14 @@ public class UImanager : MonoBehaviour
         {
             //pLevel = pMovement
             pHealth = pMovement.Health / pMovement.MaxHealth;
+            pHealthNum = (int)pMovement.Health;
+
             //pExp = pMovement
+        }
+        else
+        {
+            float x = pHealth * 100;
+            pHealthNum = (int)(x);
         }
 
         //Get dash
@@ -94,6 +103,7 @@ public class UImanager : MonoBehaviour
         oLevel.GetComponent<TMP_Text>().text = pLevel.ToString();
 
         oHealth.GetComponent<Image>().fillAmount = pHealth;
+        oHealthNum.GetComponent<TMP_Text>().text = pHealthNum.ToString();
 
         oExp.GetComponent<Image>().fillAmount = pExp;
 
@@ -142,6 +152,7 @@ public class UImanager : MonoBehaviour
         oTimer = this.transform.Find("Combo/Triangle/Circle/uiTimer").gameObject;
         oLevel = this.transform.Find("Bottom/Back/uiLevel").gameObject;
         oHealth = this.transform.Find("Bottom/Back/uiHealth").gameObject;
+        oHealthNum = this.transform.Find("Bottom/Back/uiHealth/uiHealthNum").gameObject;
         oExp = this.transform.Find("Bottom/Back/uiExp").gameObject;
         oSkill1 = this.transform.Find("Bottom/Back/Skills/uiSkill1").gameObject;
         oSkill1Cool = oSkill1.transform.Find("uiSkill1Cool").gameObject;
