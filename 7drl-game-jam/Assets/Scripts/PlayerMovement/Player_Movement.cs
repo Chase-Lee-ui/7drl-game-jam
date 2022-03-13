@@ -13,17 +13,15 @@ public class Player_Movement : MonoBehaviour
     public bool dash, swingreadyaudio;
     public float dashSpeed;
     public float inputDashSpeed;
+    public float MaxDashes;                 // TO DO: IMPLIMENT THIS
     public float dashDuration = 0.05f;
     public float dashCooldown = 1f;
     public bool dashImmunity;
     public float Time_Elapsed = 2.0f;
     public AudioSource dashSwoosh, swingSwoosh;
-
-    // public float boundary_xMin;
-    // public float boundary_xMax;
-    // public float boundary_yMin;
-    // public float boundary_yMax;
-
+    
+    public int souls;
+    public int exp;
     public bool wallCollide;
     public GameObject Sword;
     public Animator SwordAnim;
@@ -35,7 +33,7 @@ public class Player_Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
@@ -123,4 +121,3 @@ public class Player_Movement : MonoBehaviour
         dash = false;
     }
 }
-
