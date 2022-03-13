@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 //using UnityEngine.
 
 public class ShopManagerScript : MonoBehaviour
@@ -74,6 +75,7 @@ public class ShopManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         //Souls = Player.souls;
         //Souls = Player.GetComponent<Player_Movement>().souls.ToString();
 
@@ -219,6 +221,11 @@ public class ShopManagerScript : MonoBehaviour
         }
         // Debug.Log(threeRandomNumber[1]);
         RandomSelectThreeIDCard();
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene("Wave_1_Variant", LoadSceneMode.Single);
     }
 
 
