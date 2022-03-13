@@ -1,50 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Spawn_Logic : MonoBehaviour
 {
     public RoomTemplates rmTemplates;
     public GameObject[] Enemies;
     public int NumEnemies;
     public GameObject Portal;
-    public Combo_Manager combo;
+    private bool Portal_Spawned = false;
+    private float Modifier;
+    public List<GameObject> EnemiesLeft;
+    public float Time_Elapsed;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnEnemies", 2.0f);
+        this.Modifier = GameObject.Find("PlayerPrefab").GetComponent<Player_Manager>().Modifier;
+        NumEnemies = Mathf.CeilToInt(NumEnemies * Modifier);
+        StartCoroutine(Buffer());
+    }
+    IEnumerator Buffer()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SpawnEnemies();
     }
 
     void Update()
     {
-        if(GameObject.FindGameObjectsWithTag("Enemy") == null)
+        for(int i = 0; i < EnemiesLeft.Count; i++)
         {
-            Instantiate(Portal, rmTemplates.rooms[0].transform.position, Quaternion.identity);
+            if(EnemiesLeft[i] == null)
+            {
+                EnemiesLeft.RemoveAt(i);
+            }
+        }
+
+        Time_Elapsed += Time.deltaTime;
+        if(EnemiesLeft.Count == 0 && Time_Elapsed >= 2.1f && Portal_Spawned == false)
+        {
+            Instantiate(Portal, rmTemplates.rooms[0].gameObject.transform.position, Quaternion.identity);
+            Portal_Spawned = true;
         }
     }
 
     void SpawnEnemies()
     {
-        foreach(var rooms in rmTemplates.rooms)
+        for(int i = 0; i < NumEnemies; i++)
         {
-            for(int i = 0; i < NumEnemies; i++)
-            {
-                if(rooms.name != "Entry Room")
-                {
-                    var rmPos = new Vector3(
-                        rooms.gameObject.transform.position.x + Random.Range(-2.5f, 2.5f),
-                        rooms.gameObject.transform.position.y + Random.Range(-2.5f, 2.0f),
-                        rooms.gameObject.transform.position.z + Random.Range(-2.5f, 2.0f)
+            var rmPos = new Vector3(
+                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.x,
+                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.y,
+                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.z
                     );
 
-                    Instantiate(
-                        Enemies[Random.Range(0, Enemies.Length)], 
-                        rmPos, 
-                        Quaternion.identity);
-                }
-            }
-            
+            var spawnedEnemy = Instantiate(
+                Enemies[Random.Range(0, Enemies.Length)],
+                rmPos,
+                Quaternion.identity
+            ); 
+
+            EnemiesLeft.Add(spawnedEnemy);
         }
-       combo.enabled = true;
     }
 }
