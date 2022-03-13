@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     protected GameObject Player;
     protected Combo_Manager combo;
     public AudioSource dead;
+    protected bool DeadAlready = false;
+    public Collider2D EnemyCollider;
 
     void Start()
     {
@@ -43,14 +45,23 @@ public class Enemy : MonoBehaviour
             Attacking();
         }
 
-        if(Health <= 0)
+        if(Health <= 0 && !this.DeadAlready)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
             //add exp/souls to player
             dead.Play();
-            Destroy(this.gameObject);
+            DeadAlready = true;
+            EnemyCollider.enabled = false;
+            Moving = false;
+            StartCoroutine(DestroyEnemy());
         }
 
+    }
+
+    IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(this.gameObject);
     }
 
     private void Attacking() //probably change this to a coroutine
