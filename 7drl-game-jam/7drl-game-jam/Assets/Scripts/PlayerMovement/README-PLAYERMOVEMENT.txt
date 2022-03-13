@@ -1,1 +1,0 @@
-Make sure the Walls Have Collider 2D
