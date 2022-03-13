@@ -5,7 +5,6 @@ using UnityEngine;
 public class Wizard : Enemy
 {
     public GameObject[] Spells;
-    private int SpellIndex = 0;
     public Transform SpellSpawner;
 
     public override void Update()
@@ -28,7 +27,8 @@ public class Wizard : Enemy
             Moving = false;
 
             //Do attack
-            Attacking();
+            StartCoroutine(Attacking());
+            Timer = 0;
         }
 
         if (Health <= 0)
@@ -37,15 +37,11 @@ public class Wizard : Enemy
             Destroy(this.gameObject);
         }
     }
-    private void Attacking()
+    IEnumerator Attacking()
     {
-        SpellIndex += 1;
-        if(SpellIndex >= Spells.Length)
-        {
-            SpellIndex = 0;
-        }
-        var arrow = Instantiate(Spells[SpellIndex], SpellSpawner.transform.position, this.gameObject.transform.rotation);
+        var arrow = Instantiate(Spells[Random.Range(0, Spells.Length)], SpellSpawner.transform.position, this.gameObject.transform.rotation);
         arrow.GetComponent<Arrow_Projectile>().Damage = this.Attack;
+        yield return new WaitForSeconds(Attack_Speed);
         Timer = 0;
     }
 }

@@ -11,8 +11,10 @@ public class UImanager : MonoBehaviour
     const float skillOnAlpha = 0f;
 
     //Player
+    [SerializeField]  private bool hasPlayer;
     private GameObject pPlayer;
-    private Player_Movement pMovement; 
+    private Player_Movement pMovement;
+    //private Combo_Manager pCombo;
 
     //Player stats
     [SerializeField] private float pHealth;
@@ -20,14 +22,14 @@ public class UImanager : MonoBehaviour
     [SerializeField] private float pExp;
     [SerializeField] private int pCombo;
     [SerializeField] private int pSouls;
-    [SerializeField] private float pTimer;
-    private bool pDash;
+    private int pHealthNum;
+    private float pTimer;
 
     //Abilities
-
+    private bool pDash;
 
     //Other
-    [SerializeField] private int wave;
+    [SerializeField] private int pWave;
 
     //Children
     private GameObject oCombo;
@@ -35,6 +37,7 @@ public class UImanager : MonoBehaviour
 
     private GameObject oLevel;
     private GameObject oHealth;
+    private GameObject oHealthNum;
     private GameObject oExp;
 
     private GameObject oSkill1;
@@ -42,53 +45,52 @@ public class UImanager : MonoBehaviour
     private GameObject oSkill2;
     private GameObject oSkill3;
 
+    private GameObject oWave;
+    private GameObject oSoul;
+
     // Start is called before the first frame update
     void Start()
     {
         //get player
-        pPlayer = GameObject.Find("PlayerPrefab");
-        pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
+        GetPlayerRef();
 
         //get child objects
-        oCombo = this.transform.Find("Combo/Triangle/Circle/uiCombo").gameObject;
-        oTimer = this.transform.Find("Combo/Triangle/Circle/uiTimer").gameObject;
-        oLevel = this.transform.Find("Bottom/Back/uiLevel").gameObject;
-        oHealth = this.transform.Find("Bottom/Back/uiHealth").gameObject;
-        oExp = this.transform.Find("Bottom/Back/uiExp").gameObject;
-        oSkill1 = this.transform.Find("Bottom/Back/Skills/uiSkill1").gameObject;
-        oSkill1Cool = oSkill1.transform.Find("uiSkill1Cool").gameObject;
-
+        GetChildRef();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Get combo
-        
+        /*
+        if (hasPlayer)
+        {
+            pCombo =
+            pTimer =
+        }
+        */
 
-        //Get health exp
-        pHealth = pMovement.Health / pMovement.MaxHealth;
+        //Get level health exp 
+        if (hasPlayer)
+        {
+            //pLevel = pMovement
+            pHealth = pMovement.Health / pMovement.MaxHealth;
+            pHealthNum = (int)pMovement.Health;
+
+            //pExp = pMovement
+        }
+        else
+        {
+            float x = pHealth * 100;
+            pHealthNum = (int)(x);
+        }
 
         //Get dash
-        pDash = pMovement.dash;
+        if (hasPlayer)
+            pDash = pMovement.dash;
 
         //Update combo for show
-        if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            pCombo++;
-            pTimer = maxTimer;
-        }
-
-        if (pCombo > 1)
-        {
-            pTimer -= Time.deltaTime;
-
-            if (pTimer <= 0)
-            {
-                pTimer = maxTimer;
-                pCombo--;
-            }
-        }
+        UpdateCombo();
 
         //Set combo
         string newCombo = "x" + pCombo.ToString();
@@ -101,6 +103,7 @@ public class UImanager : MonoBehaviour
         oLevel.GetComponent<TMP_Text>().text = pLevel.ToString();
 
         oHealth.GetComponent<Image>().fillAmount = pHealth;
+        oHealthNum.GetComponent<TMP_Text>().text = pHealthNum.ToString();
 
         oExp.GetComponent<Image>().fillAmount = pExp;
 
@@ -118,5 +121,67 @@ public class UImanager : MonoBehaviour
             oSkill1Cool.GetComponent<Image>().color = oColor;
         }
 
+        //Set wave souls
+        oWave.GetComponent<TMP_Text>().text = pWave.ToString();
+
+        oSoul.GetComponent<TMP_Text>().text = pSouls.ToString();
+    }
+
+    //Saves all necessary player references, or sets hasPlayer to true if none
+    private void GetPlayerRef()
+    {
+        pPlayer = GameObject.Find("PlayerPrefab");
+
+        if (pPlayer)
+        {
+            hasPlayer = true;
+            pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
+            //pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
+        }
+        else
+        {
+            hasPlayer = false;
+        }
+
+    }
+
+    //Saves all necessary UI object references
+    private void GetChildRef()
+    {
+        oCombo = this.transform.Find("Combo/Triangle/Circle/uiCombo").gameObject;
+        oTimer = this.transform.Find("Combo/Triangle/Circle/uiTimer").gameObject;
+        oLevel = this.transform.Find("Bottom/Back/uiLevel").gameObject;
+        oHealth = this.transform.Find("Bottom/Back/uiHealth").gameObject;
+        oHealthNum = this.transform.Find("Bottom/Back/uiHealth/uiHealthNum").gameObject;
+        oExp = this.transform.Find("Bottom/Back/uiExp").gameObject;
+        oSkill1 = this.transform.Find("Bottom/Back/Skills/uiSkill1").gameObject;
+        oSkill1Cool = oSkill1.transform.Find("uiSkill1Cool").gameObject;
+        oWave = this.transform.Find("BottomRight/Back/uiWaveNum").gameObject;
+        oSoul = this.transform.Find("BottomRight/Back/uiSoulNum").gameObject;
+
+    }
+
+    //Automatically animates the combo meter if no player object found
+    private void UpdateCombo()
+    {
+        if (!hasPlayer)
+        {
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                pCombo++;
+                pTimer = maxTimer;
+            }
+
+            if (pCombo > 1)
+            {
+                pTimer -= Time.deltaTime;
+
+                if (pTimer <= 0)
+                {
+                    pTimer = maxTimer;
+                    pCombo--;
+                }
+            }
+        }
     }
 }

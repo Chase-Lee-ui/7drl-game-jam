@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3819531a332b804585c3ea741273b58
+guid: 72aad674b11f620499c36af8776d059b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,169 +104,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ATK_UP Icon
+      name: Boss2_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 1702
-        width: 250
-        height: 243
+        x: 0
+        y: 550
+        width: 1214
+        height: 889
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55e092d186819f64cbd807db7a0b9f53
-      internalID: -177198942
+      spriteID: 3be77aac22c60fc45846afd99e55c992
+      internalID: -224387507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShortSword Icon
+      name: Boss2_1
       rect:
         serializedVersion: 2
-        x: 657
-        y: 1703
-        width: 250
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1247
+        y: 797
+        width: 525
+        height: 729
+      alignment: 9
+      pivot: {x: 0.50146437, y: 0.40085396}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5074c253c4b986b499a3c3dc2ef34769
-      internalID: -1371818862
+      spriteID: 93848bf08455902479bde4765cb86c4a
+      internalID: 890761475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoardSwordIcon
+      name: Boss2_2
       rect:
         serializedVersion: 2
-        x: 367
-        y: 1702
-        width: 250
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1455
+        y: 0
+        width: 109
+        height: 790
+      alignment: 9
+      pivot: {x: 0.5, y: 0.93801224}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebad88344180063469224e9e52e0c4e2
-      internalID: 393499081
+      spriteID: f76d4754c38d4cd43a4e41968d6bd75d
+      internalID: 1590990328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HP_UP Icon
+      name: Boss2_3
       rect:
         serializedVersion: 2
-        x: 954
-        y: 1704
-        width: 250
-        height: 243
+        x: 1800
+        y: 514
+        width: 1213
+        height: 891
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7350e727939989f43a84a1e8364c8d5f
-      internalID: -1087183434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armor_UP Icon
-      rect:
-        serializedVersion: 2
-        x: 1248
-        y: 1705
-        width: 250
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 818d1dea29dce7147b6ddfb8a720ed4c
-      internalID: -768938005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dash_UP Icon
-      rect:
-        serializedVersion: 2
-        x: 1551
-        y: 1706
-        width: 250
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 767546d4e004332449284a1c422aa26f
-      internalID: 1062703941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wave_ATK Icon
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 1372
-        width: 250
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 248f68da17cb3864ab9bf32660f94342
-      internalID: -1310908777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATK_SPD_UP Icon
-      rect:
-        serializedVersion: 2
-        x: 372
-        y: 1372
-        width: 250
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcaddcf94eb91b849998a7a1d2e25ddf
-      internalID: 1591247837
+      spriteID: 17893d5c9ed930647960942436d23d2f
+      internalID: 1011048916
       vertices: []
       indices: 
       edges: []
@@ -282,14 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wave_ATK Icon: -1310908777
-      HP_UP Icon: -1087183434
-      Dash_UP Icon: 1062703941
-      ATK_SPD_UP Icon: 1591247837
-      BoardSwordIcon: 393499081
-      ShortSword Icon: -1371818862
-      Armor_UP Icon: -768938005
-      ATK_UP Icon: -177198942
+      Boss2_3: 1011048916
+      Boss2_1: 890761475
+      Boss2_0: -224387507
+      Boss2_2: 1590990328
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

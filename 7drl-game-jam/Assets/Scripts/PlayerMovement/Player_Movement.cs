@@ -22,7 +22,7 @@ public class Player_Movement : MonoBehaviour
     
     public int souls;
     public int exp;
-    
+    public bool wallCollide;
     public GameObject Sword;
     public Animator SwordAnim;
 
@@ -71,7 +71,7 @@ public class Player_Movement : MonoBehaviour
             if (!swingreadyaudio)
             {
                 StartCoroutine(AttackNow());
-                swingSwoosh.Play();
+                if(swingSwoosh != null) { swingSwoosh.Play(); }
             }
           //  swingreadyaudio = true;
    //         swingSwoosh.Play();
