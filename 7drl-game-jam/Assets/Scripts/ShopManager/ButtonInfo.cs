@@ -1,4 +1,4 @@
-//https://www.youtube.com/watch?v=Oie-G5xuQNA
+// //https://www.youtube.com/watch?v=Oie-G5xuQNA
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +9,14 @@ public class ButtonInfo : MonoBehaviour
     
     public int ItemID;
     public Text PriceTxt;
+    public Text QuantityTxt;
     public GameObject ShopManager;
 
     // Update is called once per frame
     void Update()
     {
         PriceTxt.text = "Price: " + ShopManager.GetComponent<ShopManagerScript>().shopUpgrades[2, ItemID].ToString();
+        //QuantityTxt.text = ShopManager.GetComponent<ShopManagerScript>().shopUpgrades[3, ItemID].ToString();
 
     }
 }
