@@ -33,7 +33,8 @@ public class Player_Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        //SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
+        if (SceneManager.GetActiveScene().name != "Shop")
+            SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
     }
 
     // Update is called once per frame

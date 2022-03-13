@@ -11,7 +11,6 @@ public class Spawn_Logic : MonoBehaviour
     private float Modifier;
     public List<GameObject> EnemiesLeft;
     public float Time_Elapsed;
-    public Combo_Manager combo;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +60,5 @@ public class Spawn_Logic : MonoBehaviour
 
             EnemiesLeft.Add(spawnedEnemy);
         }
-        combo.enabled = true;
     }
 }
