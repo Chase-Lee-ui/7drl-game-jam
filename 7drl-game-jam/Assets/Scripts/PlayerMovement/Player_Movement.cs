@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     public float PlayerDamage = 5.0f;
     public float playerSpeed = 1f;
     public float AttackSpeed = 0.5f;
-    public bool dash, swingreadyaudio;;
+    public bool dash, swingreadyaudio;
     public float dashSpeed;
     public float inputDashSpeed;
     public float MaxDashes;                 // TO DO: IMPLIMENT THIS
@@ -33,7 +33,7 @@ public class Player_Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
