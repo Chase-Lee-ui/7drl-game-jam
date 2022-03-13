@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     protected float Timer = 0;
     protected bool Moving = true;
     protected GameObject Player;
+    protected Combo_Manager combo;
 
     void Start()
     {

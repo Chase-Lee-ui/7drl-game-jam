@@ -10,28 +10,33 @@ public class Combo_Manager : MonoBehaviour
     public float timeLeft;
     //Time combo last
     public int comboTime;
-    public Enemy enemy;
+    public int enemyCount;
+    public int lateCount;
     // Start is called before the first frame update
     void Start()
     {
         timeLeft = 0;
         comboCount = 0;
+        lateCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeLeft <= 0 && timeLeft >= 0)
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (timeLeft > 0)
         {
             timeLeft = timeLeft - Time.deltaTime;
         }
-        else 
+        
+        if(timeLeft <= 0)
         {
             comboCount = 0;
         }
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length <=0)
+        if (enemyCount != lateCount)
         {
-            comboCount++;
+            comboCount = comboCount + (lateCount - enemyCount);
+            lateCount = enemyCount;
             timeLeft = comboTime;
         }
     }

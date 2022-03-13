@@ -8,6 +8,7 @@ public class Spawn_Logic : MonoBehaviour
     public GameObject[] Enemies;
     public int NumEnemies;
     public GameObject Portal;
+    public Combo_Manager combo;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,19 +25,26 @@ public class Spawn_Logic : MonoBehaviour
 
     void SpawnEnemies()
     {
-        for(int i = 0; i < NumEnemies; i++)
+        foreach(var rooms in rmTemplates.rooms)
         {
-            var rmPos = new Vector3(
-                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.x,
-                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.y,
-                        rmTemplates.rooms[Random.Range(1, rmTemplates.rooms.Count)].gameObject.transform.position.z
+            for(int i = 0; i < NumEnemies; i++)
+            {
+                if(rooms.name != "Entry Room")
+                {
+                    var rmPos = new Vector3(
+                        rooms.gameObject.transform.position.x + Random.Range(-2.5f, 2.5f),
+                        rooms.gameObject.transform.position.y + Random.Range(-2.5f, 2.0f),
+                        rooms.gameObject.transform.position.z + Random.Range(-2.5f, 2.0f)
                     );
 
-            Instantiate(
-                Enemies[Random.Range(0, Enemies.Length)],
-                rmPos,
-                Quaternion.identity
-            );
+                    Instantiate(
+                        Enemies[Random.Range(0, Enemies.Length)], 
+                        rmPos, 
+                        Quaternion.identity);
+                }
+            }
+            
         }
+       combo.enabled = true;
     }
 }

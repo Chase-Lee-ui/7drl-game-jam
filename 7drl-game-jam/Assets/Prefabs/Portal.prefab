@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1915609273332921848}
   - component: {fileID: 1915609273332921849}
   m_Layer: 0
-  m_Name: Text
+  m_Name: J_Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1915609273332921854
 Transform:
   m_ObjectHideFlags: 0
@@ -109,12 +109,12 @@ GameObject:
   - component: {fileID: 1915609273825753576}
   - component: {fileID: 1915609273825753577}
   m_Layer: 0
-  m_Name: Text (1)
+  m_Name: L_Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1915609273825753582
 Transform:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 7811302910645054935}
   m_Layer: 0
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,8 +309,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b937af7cedbb3f24fa0910c54e4dbfce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Options: {fileID: 1915609274288549502}
-  NextScene: idk
+  Options:
+  - {fileID: 1915609273332921855}
+  - {fileID: 1915609273825753583}
+  NextScene:
+  - Wave_2
+  - Wave_3
+  - Wave_4
+  - Wave_5
+  - Wave_6
+  - Wave_7
+  - Wave_8
+  - Wave_9
+  - Final_Boss
+  LoopNum: 0
+  CurrentWave: 0
 --- !u!1 &1915609274288549502
 GameObject:
   m_ObjectHideFlags: 0
