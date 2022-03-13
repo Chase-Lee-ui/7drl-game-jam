@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Exploder : Enemy
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float KaboomTimer;
+    public GameObject KaboomHitBox;
     public override void Update()
     {
-        /*
         if (Moving)
         {
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * Movement_Speed);
@@ -24,34 +18,22 @@ public class Exploder : Enemy
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 
-        if (InRange) { Moving = false; } else { Moving = true; }
-        //Attack, stop moving when attacking
-        Timer += Time.deltaTime;
-        if (Timer >= Attack_Speed && InRange)
-        {
+        if (InRange)
+        { 
             Moving = false;
-
-            //Do attack
-            Attacking();
-        }
+            KaboomTimer -= Time.deltaTime;
+            if(KaboomTimer <= 0)
+            {
+                KaboomHitBox.GetComponent<Kaboomer>().Damage = this.Attack;
+                KaboomHitBox.SetActive(true);
+            }
+        } 
 
         if (Health <= 0)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
-            Explode();
+            Destroy(this.gameObject);
         }
-        */
     }
 
-    private void Attacking()
-    {
-        
-        Timer = 0;
-    }
-
-    private void Explode()
-    {
-        Attack = Attack * 2;
-        Destroy(this.gameObject);
-    }
 }

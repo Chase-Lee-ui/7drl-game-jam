@@ -8,6 +8,7 @@ public class Spawn_Logic : MonoBehaviour
     public GameObject[] Enemies;
     public int NumEnemies;
     public GameObject Portal;
+    public Combo_Manager combo;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +45,6 @@ public class Spawn_Logic : MonoBehaviour
             }
             
         }
+       combo.enabled = true;
     }
 }
