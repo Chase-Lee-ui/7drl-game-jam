@@ -14,13 +14,13 @@ public class UImanager : MonoBehaviour
     [SerializeField]  private bool hasPlayer;
     private GameObject pPlayer;
     private Player_Movement pMovement;
-    //private Combo_Manager pCombo;
+    private Combo_Manager pCombo;
 
     //Player stats
     [SerializeField] private float pHealth;
     [SerializeField] private int pLevel;
     [SerializeField] private float pExp;
-    [SerializeField] private int pCombo;
+    [SerializeField] private int pComboNum;
     [SerializeField] private int pSouls;
     private int pHealthNum;
     private float pTimer;
@@ -62,13 +62,11 @@ public class UImanager : MonoBehaviour
     void Update()
     {
         //Get combo
-        /*
         if (hasPlayer)
         {
-            pCombo =
-            pTimer =
+            pComboNum = pCombo.comboCount;
+            pTimer = pCombo.timeLeft / pCombo.comboTime;
         }
-        */
 
         //Get level health exp 
         if (hasPlayer)
@@ -93,7 +91,7 @@ public class UImanager : MonoBehaviour
         UpdateCombo();
 
         //Set combo
-        string newCombo = "x" + pCombo.ToString();
+        string newCombo = "x" + pComboNum.ToString();
 
         oCombo.GetComponent<TMP_Text>().text = newCombo;
 
@@ -136,7 +134,7 @@ public class UImanager : MonoBehaviour
         {
             hasPlayer = true;
             pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
-            //pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
+            pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
         }
         else
         {
@@ -158,7 +156,6 @@ public class UImanager : MonoBehaviour
         oSkill1Cool = oSkill1.transform.Find("uiSkill1Cool").gameObject;
         oWave = this.transform.Find("BottomRight/Back/uiWaveNum").gameObject;
         oSoul = this.transform.Find("BottomRight/Back/uiSoulNum").gameObject;
-
     }
 
     //Automatically animates the combo meter if no player object found
@@ -168,18 +165,18 @@ public class UImanager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
-                pCombo++;
+                pComboNum++;
                 pTimer = maxTimer;
             }
 
-            if (pCombo > 1)
+            if (pComboNum > 1)
             {
                 pTimer -= Time.deltaTime;
 
                 if (pTimer <= 0)
                 {
                     pTimer = maxTimer;
-                    pCombo--;
+                    pComboNum--;
                 }
             }
         }
