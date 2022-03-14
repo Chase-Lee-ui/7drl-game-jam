@@ -18,12 +18,15 @@ public class UImanager : MonoBehaviour
     //Player stats
     [SerializeField] private float pHealth;
     [SerializeField] private int pLevel;
+
     [SerializeField] private float pExp;
     [SerializeField] private int pComboNum;
     [SerializeField] private float pTimerMax;
     [SerializeField] private int pSouls;
+
     private int pHealthNum;
     private float pTimer;
+    private int pExpNum;
 
     //Abilities
     private bool pDash;
@@ -68,7 +71,6 @@ public class UImanager : MonoBehaviour
             pHealth = pMovement.Health / pMovement.MaxHealth;
             pHealthNum = (int)pMovement.Health;
 
-            //pExp = pMovement
         }
         else
         {
@@ -76,6 +78,17 @@ public class UImanager : MonoBehaviour
             pHealthNum = (int)(x);
         }
 
+        //Get exp
+        // if (hasPlayer)
+        // {
+        //     pExp = pMovement.exp / pMovement.MaxExp;
+        // }
+
+        //Get souls
+        if (hasPlayer)
+        {
+            pSouls = pMovement.souls;
+        }
         //Get dash
         if (hasPlayer)
             pDash = pMovement.dash;

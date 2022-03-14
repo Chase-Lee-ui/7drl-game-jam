@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float Attack_Speed = 2;
     [SerializeField] public float Movement_Speed = 3;
     [SerializeField] public float Multiplier = 1.0f;
+    [SerializeField] public int expDrop = 1;
+    [SerializeField] public int soulsDrop = 1;
     protected bool InRange = false;
     protected float Timer = 0;
     protected bool Moving = true;
@@ -46,6 +48,11 @@ public class Enemy : MonoBehaviour
         {
             //if have death animation, run animation then do an invoke to destroy this game object
             //add exp/souls to player
+            Player.GetComponent<Player_Movement>().souls += soulsDrop;
+            Player.GetComponent<Player_Movement>().exp += expDrop;
+
+            // Debug.Log(expDrop);
+
             Destroy(this.gameObject);
         }
 

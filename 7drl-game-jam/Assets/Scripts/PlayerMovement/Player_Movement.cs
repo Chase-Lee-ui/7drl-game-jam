@@ -22,6 +22,8 @@ public class Player_Movement : MonoBehaviour
     
     public int souls;
     public int exp;
+    public int MaxExp;
+
     public bool wallCollide;
     public GameObject Sword;
     public Animator SwordAnim;
@@ -33,9 +35,11 @@ public class Player_Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+
 /*        if (SceneManager.GetActiveScene().name != "Shop")
             SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
 */    }
+
 
     // Update is called once per frame
     void FixedUpdate()

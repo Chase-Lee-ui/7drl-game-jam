@@ -33,6 +33,10 @@ public class Archer : Enemy
         if (Health <= 0)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
+            Player.GetComponent<Player_Movement>().souls += soulsDrop;
+            Player.GetComponent<Player_Movement>().exp += expDrop;
+
+            Debug.Log(expDrop);
             Destroy(this.gameObject);
         }
     }
