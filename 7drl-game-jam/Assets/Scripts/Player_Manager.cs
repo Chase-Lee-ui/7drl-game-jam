@@ -44,6 +44,6 @@ public class Player_Manager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if(SceneManager.GetActiveScene().name == "Start_Screen") { Destroy(this.gameObject); }
-        if(SceneManager.GetActiveScene().name == "Shop") { LoopCounter++; Modifier *= ModifyModifier; }
+        if(SceneManager.GetActiveScene().name == "Shop") { SceneManager.UnloadSceneAsync("pHUD"); LoopCounter++; Modifier *= ModifyModifier; }
     }
 }
