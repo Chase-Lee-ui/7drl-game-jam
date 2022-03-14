@@ -29,7 +29,43 @@ public class Portal : MonoBehaviour
 
             if(Input.GetKey(KeyCode.L))
             {
-                SceneManager.LoadScene(NextScene[CurrentWave], LoadSceneMode.Single);
+                if(SceneManager.GetActiveScene().name == "Wave_1" || SceneManager.GetActiveScene().name == "Wave_1_Variant")
+                {
+                    SceneManager.LoadScene(NextScene[0], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_2")
+                {
+                    SceneManager.LoadScene(NextScene[1], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_3")
+                {
+                    SceneManager.LoadScene(NextScene[2], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_4")
+                {
+                    SceneManager.LoadScene(NextScene[3], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_5")
+                {
+                    SceneManager.LoadScene(NextScene[4], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_6")
+                {
+                    SceneManager.LoadScene(NextScene[5], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_7")
+                {
+                    SceneManager.LoadScene(NextScene[6], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_8")
+                {
+                    SceneManager.LoadScene(NextScene[7], LoadSceneMode.Single);
+                }
+                if(SceneManager.GetActiveScene().name == "Wave_9")
+                {
+                    SceneManager.LoadScene(NextScene[8], LoadSceneMode.Single);
+                }
+                
             }
         }
     }

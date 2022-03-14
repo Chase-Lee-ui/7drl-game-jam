@@ -429,6 +429,7 @@ MonoBehaviour:
   Portal: {fileID: 1915609274014551625, guid: 9319d7a4dd90a86449bed95e637f52d4, type: 3}
   EnemiesLeft: []
   Time_Elapsed: 0
+  combo: {fileID: 0}
 --- !u!4 &9153715359393741272
 Transform:
   m_ObjectHideFlags: 0
