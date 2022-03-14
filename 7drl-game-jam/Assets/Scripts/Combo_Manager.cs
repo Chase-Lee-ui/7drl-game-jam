@@ -32,6 +32,7 @@ public class Combo_Manager : MonoBehaviour
         if(timeLeft <= 0)
         {
             comboCount = 0;
+            timeLeft = 0;
         }
         if (enemyCount != lateCount)
         {
