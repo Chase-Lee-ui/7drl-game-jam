@@ -199,7 +199,7 @@ MonoBehaviour:
     effects, Art for exploder enemy, Credits, tiny bit of coding, Voice Acting\n\u2981   
     Christian - Coding for the shop\n\u2981    Justin Yip - Art, Music, Animation,
     Coding\n\u2981    Nathan Leong - Coding, UI\n\u2981    Kelsy - Art for the Final
-    boss and the other enemies"
+    boss and the other enemies alongside the background"
 --- !u!222 &535734765
 CanvasRenderer:
   m_ObjectHideFlags: 0
