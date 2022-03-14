@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UImanager : MonoBehaviour
@@ -59,6 +60,9 @@ public class UImanager : MonoBehaviour
 
         //get child objects
         GetChildRef();
+
+        //get wave
+        UpdateWave();
     }
 
     // Update is called once per frame
@@ -192,5 +196,19 @@ public class UImanager : MonoBehaviour
             pComboNum = pCombo.comboCount;
             pTimer = pCombo.timeLeft;
         }
+    }
+
+    private void UpdateWave()
+    {
+        if (hasPlayer)
+        {
+            string scene = SceneManager.GetActiveScene().name;
+            string[] x = scene.Split('_');
+
+            if (int.TryParse(x[1], out pWave))
+                return;
+        }
+        
+        pWave = -1;
     }
 }
