@@ -1636,7 +1636,7 @@ MonoBehaviour:
   Options:
   - {fileID: 6114364585242664474}
   NextScene:
-  - Credits
+  - Credits2
   LoopNum: 0
   CurrentWave: 0
 --- !u!1 &6114364583691176331
