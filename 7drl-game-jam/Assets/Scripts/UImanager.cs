@@ -130,7 +130,10 @@ public class UImanager : MonoBehaviour
         }
 
         //Set wave souls
-        oWave.GetComponent<TMP_Text>().text = pWave.ToString();
+        if (pWave == 99)
+            oWave.GetComponent<TMP_Text>().text = "FINAL";
+        else
+            oWave.GetComponent<TMP_Text>().text = pWave.ToString();
 
         oSoul.GetComponent<TMP_Text>().text = pSouls.ToString();
     }
@@ -203,6 +206,13 @@ public class UImanager : MonoBehaviour
         if (hasPlayer)
         {
             string scene = SceneManager.GetActiveScene().name;
+
+            if (scene == "Final_Boss")
+            {
+                pWave = 99;
+                return;
+            }
+
             string[] x = scene.Split('_');
 
             if (int.TryParse(x[1], out pWave))
