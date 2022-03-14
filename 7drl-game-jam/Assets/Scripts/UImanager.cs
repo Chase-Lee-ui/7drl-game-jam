@@ -6,7 +6,6 @@ using TMPro;
 
 public class UImanager : MonoBehaviour
 {
-    const float maxTimer = 5f;
     const float skillOffAlpha = 0.5f;
     const float skillOnAlpha = 0f;
 
@@ -21,6 +20,7 @@ public class UImanager : MonoBehaviour
     [SerializeField] private int pLevel;
     [SerializeField] private float pExp;
     [SerializeField] private int pComboNum;
+    [SerializeField] private float pTimerMax;
     [SerializeField] private int pSouls;
     private int pHealthNum;
     private float pTimer;
@@ -61,13 +61,6 @@ public class UImanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get combo
-        if (hasPlayer)
-        {
-            pComboNum = pCombo.comboCount;
-            pTimer = pCombo.timeLeft / pCombo.comboTime;
-        }
-
         //Get level health exp 
         if (hasPlayer)
         {
@@ -87,7 +80,7 @@ public class UImanager : MonoBehaviour
         if (hasPlayer)
             pDash = pMovement.dash;
 
-        //Update combo for show
+        //Update combo
         UpdateCombo();
 
         //Set combo
@@ -95,7 +88,7 @@ public class UImanager : MonoBehaviour
 
         oCombo.GetComponent<TMP_Text>().text = newCombo;
 
-        oTimer.GetComponent<Image>().fillAmount = pTimer / maxTimer;
+        oTimer.GetComponent<Image>().fillAmount = pTimer / pTimerMax;
 
         //Set health level exp
         oLevel.GetComponent<TMP_Text>().text = pLevel.ToString();
@@ -135,6 +128,7 @@ public class UImanager : MonoBehaviour
             hasPlayer = true;
             pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
             pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
+            pTimerMax = pCombo.comboTime;
         }
         else
         {
@@ -166,7 +160,7 @@ public class UImanager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
                 pComboNum++;
-                pTimer = maxTimer;
+                pTimer = pTimerMax;
             }
 
             if (pComboNum > 1)
@@ -175,10 +169,15 @@ public class UImanager : MonoBehaviour
 
                 if (pTimer <= 0)
                 {
-                    pTimer = maxTimer;
+                    pTimer = pTimerMax;
                     pComboNum--;
                 }
             }
+        }
+        else
+        {
+            pComboNum = pCombo.comboCount;
+            pTimer = pCombo.timeLeft;
         }
     }
 }

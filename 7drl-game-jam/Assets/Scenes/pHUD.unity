@@ -379,7 +379,8 @@ MonoBehaviour:
   pHealth: 0.9
   pLevel: 7
   pExp: 0.5
-  pCombo: 5
+  pComboNum: 0
+  pTimerMax: 5
   pSouls: 420
   pWave: 69
 --- !u!1 &154324645

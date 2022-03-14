@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Spawn_Logic : MonoBehaviour
 {
     public RoomTemplates rmTemplates;
@@ -14,6 +15,8 @@ public class Spawn_Logic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
+
         this.Modifier = GameObject.Find("PlayerPrefab").GetComponent<Player_Manager>().Modifier;
         NumEnemies = Mathf.CeilToInt(NumEnemies * Modifier);
         StartCoroutine(Buffer());
