@@ -6,7 +6,6 @@ using TMPro;
 
 public class UImanager : MonoBehaviour
 {
-    const float maxTimer = 5f;
     const float skillOffAlpha = 0.5f;
     const float skillOnAlpha = 0f;
 
@@ -14,13 +13,14 @@ public class UImanager : MonoBehaviour
     [SerializeField]  private bool hasPlayer;
     private GameObject pPlayer;
     private Player_Movement pMovement;
-    //private Combo_Manager pCombo;
+    private Combo_Manager pCombo;
 
     //Player stats
     [SerializeField] private float pHealth;
     [SerializeField] private int pLevel;
     [SerializeField] private float pExp;
-    [SerializeField] private int pCombo;
+    [SerializeField] private int pComboNum;
+    [SerializeField] private float pTimerMax;
     [SerializeField] private int pSouls;
     private int pHealthNum;
     private float pTimer;
@@ -61,15 +61,6 @@ public class UImanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get combo
-        /*
-        if (hasPlayer)
-        {
-            pCombo =
-            pTimer =
-        }
-        */
-
         //Get level health exp 
         if (hasPlayer)
         {
@@ -89,15 +80,15 @@ public class UImanager : MonoBehaviour
         if (hasPlayer)
             pDash = pMovement.dash;
 
-        //Update combo for show
+        //Update combo
         UpdateCombo();
 
         //Set combo
-        string newCombo = "x" + pCombo.ToString();
+        string newCombo = "x" + pComboNum.ToString();
 
         oCombo.GetComponent<TMP_Text>().text = newCombo;
 
-        oTimer.GetComponent<Image>().fillAmount = pTimer / maxTimer;
+        oTimer.GetComponent<Image>().fillAmount = pTimer / pTimerMax;
 
         //Set health level exp
         oLevel.GetComponent<TMP_Text>().text = pLevel.ToString();
@@ -136,7 +127,8 @@ public class UImanager : MonoBehaviour
         {
             hasPlayer = true;
             pMovement = pPlayer.GetComponentInChildren<Player_Movement>();
-            //pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
+            pCombo = pPlayer.GetComponentInChildren<Combo_Manager>();
+            pTimerMax = pCombo.comboTime;
         }
         else
         {
@@ -158,7 +150,6 @@ public class UImanager : MonoBehaviour
         oSkill1Cool = oSkill1.transform.Find("uiSkill1Cool").gameObject;
         oWave = this.transform.Find("BottomRight/Back/uiWaveNum").gameObject;
         oSoul = this.transform.Find("BottomRight/Back/uiSoulNum").gameObject;
-
     }
 
     //Automatically animates the combo meter if no player object found
@@ -168,20 +159,25 @@ public class UImanager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
-                pCombo++;
-                pTimer = maxTimer;
+                pComboNum++;
+                pTimer = pTimerMax;
             }
 
-            if (pCombo > 1)
+            if (pComboNum > 1)
             {
                 pTimer -= Time.deltaTime;
 
                 if (pTimer <= 0)
                 {
-                    pTimer = maxTimer;
-                    pCombo--;
+                    pTimer = pTimerMax;
+                    pComboNum--;
                 }
             }
+        }
+        else
+        {
+            pComboNum = pCombo.comboCount;
+            pTimer = pCombo.timeLeft;
         }
     }
 }
