@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextScene: TestProcedural
-  CreditsScene: Credits
+  CreditsScene: Credits2
 --- !u!114 &1708086298
 MonoBehaviour:
   m_ObjectHideFlags: 0

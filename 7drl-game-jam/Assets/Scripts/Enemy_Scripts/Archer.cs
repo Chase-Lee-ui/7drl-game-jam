@@ -6,6 +6,7 @@ public class Archer : Enemy
 {
     public GameObject Arrow;
     public Transform ArrowSpawner;
+    public AudioSource dead2;
 
     public override void Update()
     {
@@ -30,9 +31,19 @@ public class Archer : Enemy
             Attacking();
         }
 
-        if (Health <= 0)
+        if (Health <= 0 && !this.DeadAlready)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
+            dead2.Play();
+            DeadAlready = true;
+            EnemyCollider.enabled = false;
+            Moving = false;
+            StartCoroutine(DestroyEnemy());
+        }
+
+        IEnumerator DestroyEnemy()
+        {
+            yield return new WaitForSeconds(0.5f);
             Destroy(this.gameObject);
         }
     }
