@@ -393,9 +393,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 500
   Attack: 10
-  Attack_Speed: 4
+  Attack_Speed: 2
   Movement_Speed: 15
   Multiplier: 1
+  expDrop: 1
+  soulsDrop: 1
   Lasers:
   - {fileID: 4455903310719478757, guid: 60e737b097c4bcf42866b0f9685052e8, type: 3}
   - {fileID: 1063761911284145663, guid: 3a6918ece7a7b114ba2eaf6e45e84b29, type: 3}
