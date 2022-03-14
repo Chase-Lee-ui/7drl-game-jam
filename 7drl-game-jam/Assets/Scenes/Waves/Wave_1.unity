@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &248192804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2371022451482173375, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+  m_PrefabInstance: {fileID: 1171204551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1496d2517045464aa6ce8d47b9559e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &387643617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -449,6 +460,7 @@ MonoBehaviour:
   Portal: {fileID: 1915609274014551625, guid: 9319d7a4dd90a86449bed95e637f52d4, type: 3}
   EnemiesLeft: []
   Time_Elapsed: 0
+  combo: {fileID: 248192804}
 --- !u!4 &9153715359393741272
 Transform:
   m_ObjectHideFlags: 0

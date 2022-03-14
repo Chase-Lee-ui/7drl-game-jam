@@ -1143,8 +1143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedca1adbadc60409baef5c3063c7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: TestProcedural
-  CreditsScene: Credits2
+  NextScene: Wave_1
+  CreditsScene: Credits
 --- !u!114 &1708086298
 MonoBehaviour:
   m_ObjectHideFlags: 0

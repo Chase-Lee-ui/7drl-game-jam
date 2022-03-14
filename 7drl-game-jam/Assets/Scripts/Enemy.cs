@@ -9,14 +9,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float Attack_Speed = 2;
     [SerializeField] public float Movement_Speed = 3;
     [SerializeField] public float Multiplier = 1.0f;
+    [SerializeField] public int expDrop = 1;
+    [SerializeField] public int soulsDrop = 1;
     protected bool InRange = false;
     protected float Timer = 0;
     protected bool Moving = true;
     protected GameObject Player;
     protected Combo_Manager combo;
-    public AudioSource dead;
-    protected bool DeadAlready = false;
-    public Collider2D EnemyCollider;
 
     void Start()
     {
@@ -45,23 +44,18 @@ public class Enemy : MonoBehaviour
             Attacking();
         }
 
-        if(Health <= 0 && !this.DeadAlready)
+        if(Health <= 0)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
             //add exp/souls to player
-            dead.Play();
-            DeadAlready = true;
-            EnemyCollider.enabled = false;
-            Moving = false;
-            StartCoroutine(DestroyEnemy());
+            Player.GetComponent<Player_Movement>().souls += soulsDrop;
+            Player.GetComponent<Player_Movement>().exp += expDrop;
+
+            // Debug.Log(expDrop);
+
+            Destroy(this.gameObject);
         }
 
-    }
-
-    IEnumerator DestroyEnemy()
-    {
-        yield return new WaitForSeconds(0.5f);
-        Destroy(this.gameObject);
     }
 
     private void Attacking() //probably change this to a coroutine

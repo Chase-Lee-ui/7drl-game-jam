@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3626666911094062900, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3931089466719944353, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
       propertyPath: SwordAnim
       value: 
@@ -141,14 +137,14 @@ PrefabInstance:
     - target: {fileID: 3931089466719944353, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
       propertyPath: dashSwoosh
       value: 
-      objectReference: {fileID: 917987335}
+      objectReference: {fileID: 1833641538}
     - target: {fileID: 3931089466719944353, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
       propertyPath: swingSwoosh
       value: 
-      objectReference: {fileID: 917987334}
-    - target: {fileID: 8353150631277152007, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
+      objectReference: {fileID: 1830670946}
+    - target: {fileID: 5402075392193996877, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8697527464573918113, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
       propertyPath: m_RootOrder
@@ -198,12 +194,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 8697527464863193617, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+--- !u!114 &136082652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2371022451482173375, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
+  m_PrefabInstance: {fileID: 136082651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1496d2517045464aa6ce8d47b9559e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &137098602
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +361,7 @@ MonoBehaviour:
   Portal: {fileID: 1915609274014551625, guid: 9319d7a4dd90a86449bed95e637f52d4, type: 3}
   EnemiesLeft: []
   Time_Elapsed: 0
+  combo: {fileID: 136082652}
 --- !u!4 &524761017
 Transform:
   m_ObjectHideFlags: 0
@@ -414,16 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0535b31486af8944bdd9ef6ccb6d235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &917987334 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3626666911094062900, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
-  m_PrefabInstance: {fileID: 136082651}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &917987335 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8353150631277152007, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
-  m_PrefabInstance: {fileID: 136082651}
-  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &1222341000
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -497,6 +491,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f96d823d3abbe648b54f8d5bb3f9e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1830670946 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4663139207770981954, guid: c1c3de8b9ddc6c442bafb7cf808f4563, type: 3}
+  m_PrefabInstance: {fileID: 4663139208494257184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1833641538 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2051736546168656312, guid: 369393eb159faf84eaf9a6ff753690a6, type: 3}
+  m_PrefabInstance: {fileID: 2051736546760652794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2027428073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1166692439529538939, guid: 1c5dda6005fb3d8459decf2816b2e4e4, type: 3}
@@ -631,10 +635,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 522703844}
     m_Modifications:
-    - target: {fileID: 2051736546168656312, guid: 369393eb159faf84eaf9a6ff753690a6, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2051736546168656313, guid: 369393eb159faf84eaf9a6ff753690a6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -752,10 +752,6 @@ PrefabInstance:
     - target: {fileID: 4663139207770981953, guid: c1c3de8b9ddc6c442bafb7cf808f4563, type: 3}
       propertyPath: m_Name
       value: SwordSwingAudio
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663139207770981954, guid: c1c3de8b9ddc6c442bafb7cf808f4563, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4663139207770981955, guid: c1c3de8b9ddc6c442bafb7cf808f4563, type: 3}
       propertyPath: m_RootOrder

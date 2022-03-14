@@ -32,12 +32,20 @@ public class Combo_Manager : MonoBehaviour
         if(timeLeft <= 0)
         {
             comboCount = 0;
+            timeLeft = 0;
         }
+
+        //if number of enemies changes
         if (enemyCount != lateCount)
         {
-            comboCount = comboCount + (lateCount - enemyCount);
+            //if enemy died
+            if (enemyCount < lateCount)
+            {
+                comboCount = comboCount + (lateCount - enemyCount);
+                timeLeft = comboTime;
+            }
+
             lateCount = enemyCount;
-            timeLeft = comboTime;
         }
     }
 }

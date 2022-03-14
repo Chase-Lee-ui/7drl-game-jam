@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Waves/Wave_9.unity
     guid: 76447a07588b8224689871102397ecfa
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
+    path: Assets/Prefabs/Shop System/Shop.unity
     guid: edf769db7970da34f893f14914da24ef
   - enabled: 1
     path: Assets/Scenes/Credits.unity

@@ -31,19 +31,13 @@ public class Wizard : Enemy
             Timer = 0;
         }
 
-        if (Health <= 0 && !this.DeadAlready)
+        if (Health <= 0)
         {
             //if have death animation, run animation then do an invoke to destroy this game object
-            dead.Play();
-            DeadAlready = true;
-            EnemyCollider.enabled = false;
-            Moving = false;
-            StartCoroutine(DestroyEnemy());
-        }
 
-        IEnumerator DestroyEnemy()
-        {
-            yield return new WaitForSeconds(0.5f);
+            Player.GetComponent<Player_Movement>().souls += soulsDrop;
+            Player.GetComponent<Player_Movement>().exp += expDrop;
+
             Destroy(this.gameObject);
         }
     }

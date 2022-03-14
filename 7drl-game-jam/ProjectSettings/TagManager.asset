@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Wall
   - Weapon
+  - Event
   layers:
   - Default
   - TransparentFX
