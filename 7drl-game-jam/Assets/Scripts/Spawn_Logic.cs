@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Spawn_Logic : MonoBehaviour
 {
     public RoomTemplates rmTemplates;
@@ -11,10 +12,11 @@ public class Spawn_Logic : MonoBehaviour
     private float Modifier;
     public List<GameObject> EnemiesLeft;
     public float Time_Elapsed;
-    public Combo_Manager combo;
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.LoadScene("pHUD", LoadSceneMode.Additive);
+
         this.Modifier = GameObject.Find("PlayerPrefab").GetComponent<Player_Manager>().Modifier;
         NumEnemies = Mathf.CeilToInt(NumEnemies * Modifier);
         StartCoroutine(Buffer());
@@ -62,6 +64,5 @@ public class Spawn_Logic : MonoBehaviour
 
             EnemiesLeft.Add(spawnedEnemy);
         }
-        combo.enabled = true;
     }
 }
